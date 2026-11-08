@@ -1,0 +1,5 @@
+export { About } from './About/About'
+export { Work } from './Work/Work'
+export { Projects } from './Projects/Projects'
+export { ProjectCard } from './Projects/ProjectCard'
+export { Hobbies } from './Hobbies/Hobbies'

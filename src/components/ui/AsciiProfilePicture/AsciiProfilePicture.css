@@ -1,0 +1,23 @@
+.landing-portrait {
+  margin: 0;
+  min-width: 0;
+  align-self: center;
+  width: 100%;
+}
+
+.landing-portrait figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 14px;
+  font: 10px var(--font-mono, "DM Mono", monospace);
+  color: #999999;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+  .landing-portrait {
+    width: min(100%, 420px);
+    margin: 0 auto;
+  }
+}

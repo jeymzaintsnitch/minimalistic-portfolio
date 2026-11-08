@@ -1,0 +1,6 @@
+{
+  "summary":  "Implementation plan to apply the exact GeistMono font stack and lowercase styling strictly to the <p> subtitle components under the main section titles (James, Work, Hobbies, Projects) and apply the GeistSans font stack strictly to description elements across all tabs.",
+  "updatedAt":  "2026-10-22T10:14:20.474103720Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

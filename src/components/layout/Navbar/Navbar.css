@@ -1,0 +1,98 @@
+/* Ultra-minimalist header with James, Work, Hobbies, Projects in Instrument Serif + Theme Toggle */
+.kavin-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--duration-fast) var(--ease-smooth), border-color var(--duration-fast) var(--ease-smooth);
+}
+
+.navbar-container {
+  max-width: var(--container-max, 860px);
+  margin: 0 auto;
+  padding: 0.75rem var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navigation Links in Instrument Serif */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-link-item {
+  position: relative;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  padding: 0.15rem 0;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+.navbar-link-item:hover {
+  color: var(--color-text);
+}
+
+.navbar-link-item.is-active {
+  color: var(--color-text);
+}
+
+.navbar-link-item.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1.5px;
+  background: var(--color-text);
+  border-radius: 1px;
+}
+
+/* Theme Toggle Button */
+.navbar-theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-xs);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.navbar-theme-btn:hover {
+  color: var(--color-text);
+  background: var(--color-surface-hover);
+  border-color: var(--color-border);
+}
+
+@media (max-width: 640px) {
+  .navbar-container {
+    padding-top: 0.95rem;
+    padding-bottom: 0.95rem;
+  }
+
+  .navbar-menu {
+    gap: 1.25rem;
+  }
+
+  .navbar-link-item {
+    font-size: 1.15rem;
+  }
+}

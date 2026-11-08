@@ -1,0 +1,61 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Length 2274 >>
+stream
+BT
+/F1 18 Tf 50 750 Td (JAMES ROLMER V. CATALAN) Tj
+/F2 10 Tf 0 -18 Td (Full-Stack Developer & Systems Engineer  |  Manila, Philippines  |  jamescatalan19@gmail.com  |  github.com/jeymzaintsnitch) Tj
+/F1 12 Tf 0 -28 Td (EXPERIENCE) Tj
+/F1 10 Tf 0 -16 Td (Full-Stack Developer — Independent & Client Work (2023 - Present)) Tj
+/F2 9.5 Tf 0 -14 Td (- Engineered fast, accessible client applications with React, TypeScript, and Tailwind CSS.) Tj
+0 -13 Td (- Architected REST APIs, webhook consumers, and background job queues in Node.js.) Tj
+0 -13 Td (- Modeled normalized PostgreSQL schemas with composite indexing and query profiling.) Tj
+/F1 10 Tf 0 -20 Td (Frontend Lead — SparkFest Hackathon Platform (2024 - 2025)) Tj
+/F2 9.5 Tf 0 -14 Td (- Built real-time schedule synchronization and rubric scoring views for hackathon judges.) Tj
+0 -13 Td (- Established component standards, Git review workflows, and zero-downtime deploys.) Tj
+/F1 10 Tf 0 -20 Td (Systems Developer — Polytechnic University of the Philippines (2021 - 2025)) Tj
+/F2 9.5 Tf 0 -14 Td (- Created automated examination and rubric evaluation workflows for large student cohorts.) Tj
+0 -13 Td (- Enforced transactional integrity on grading records using PostgreSQL row-level locks.) Tj
+/F1 12 Tf 0 -28 Td (SELECTED PROJECTS) Tj
+/F1 10 Tf 0 -16 Td (Vanguard — Cloud Security Compliance Monitor (2025)) Tj
+/F2 9.5 Tf 0 -14 Td (- Multi-tenant cloud infrastructure compliance monitor evaluating resource configurations in real time.) Tj
+/F1 10 Tf 0 -18 Td (PUP Assessment Portal — Examination & Rubric Platform (2024)) Tj
+/F2 9.5 Tf 0 -14 Td (- Collegiate exam platform supporting 500+ concurrent student sessions with automated scoring.) Tj
+/F1 10 Tf 0 -18 Td (PulseRoute — Lightweight API Gateway & Reverse Proxy (2024)) Tj
+/F2 9.5 Tf 0 -14 Td (- High-throughput HTTP reverse proxy enforcing sliding-window rate quotas and health probing.) Tj
+/F1 10 Tf 0 -18 Td (Hyperion Cache — In-Memory Key-Value Store (2024)) Tj
+/F2 9.5 Tf 0 -14 Td (- Zero-dependency in-memory TCP store with O(1) hash table indexing and Doubly-Linked LRU eviction.) Tj
+/F1 12 Tf 0 -28 Td (EDUCATION) Tj
+/F1 10 Tf 0 -16 Td (Polytechnic University of the Philippines (PUP) — BS in Information Technology (2021 - 2025)) Tj
+ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000326 00000 n 
+0000000396 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2722
+%%EOF

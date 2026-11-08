@@ -1,0 +1,133 @@
+.section-projects {
+  padding-top: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Minimalist Architectural 2-Column Grid Layout (blends with background) */
+.projects-minimal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(2rem, 5vw, 3.75rem);
+  row-gap: 0;
+}
+
+@media (hover: hover) {
+  .projects-minimal-grid:hover .project-grid-cell {
+    opacity: 0.52;
+  }
+  .projects-minimal-grid:hover .project-grid-cell:hover,
+  .projects-minimal-grid:hover .project-grid-cell:focus-within {
+    opacity: 1;
+  }
+}
+
+.project-grid-cell {
+  background: transparent;
+  border-bottom: 1px solid var(--color-border);
+  padding-block: clamp(1.75rem, 3.5vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  transition: opacity var(--duration-base) var(--ease-smooth);
+}
+
+/* Remove bottom hairline on final row of the 2-column grid */
+.project-grid-cell:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.project-cell-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.project-cell-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-faint);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  letter-spacing: 0.01em;
+}
+
+.project-meta-sep {
+  opacity: 0.5;
+}
+
+/* Instrument Serif Title */
+.project-cell-title {
+  font-family: 'Instrument Serif', var(--font-serif);
+  font-size: clamp(1.65rem, 2.4vw, 2.05rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.project-title-anchor {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--duration-fast) var(--ease-smooth);
+}
+
+/* Short Description in GeistSans ONLY */
+.project-cell-description {
+  font-family: 'GeistSans', 'Geist', 'GeistSans Fallback', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: 44ch;
+}
+
+/* Minimalist Link */
+.project-cell-footer {
+  display: flex;
+  align-items: center;
+}
+
+.project-cell-link {
+  font-family: var(--font-body);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--color-border-strong);
+  transition: border-color var(--duration-fast) var(--ease-smooth), color var(--duration-fast) var(--ease-smooth);
+}
+
+.project-cell-link:hover {
+  border-color: var(--color-text);
+}
+
+.project-cell-link svg {
+  transition: transform var(--duration-fast) var(--ease-smooth);
+}
+
+.project-cell-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 720px) {
+  .projects-minimal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid-cell:nth-last-child(-n + 2) {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .project-grid-cell:last-child {
+    border-bottom: none;
+  }
+}

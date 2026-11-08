@@ -1,0 +1,19 @@
+.section {
+  position: relative;
+  padding-block: var(--section-padding);
+}
+
+.section + .section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100% - var(--container-padding) * 2, var(--container-max));
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border-strong), transparent);
+}
+
+.section__inner {
+  position: relative;
+}

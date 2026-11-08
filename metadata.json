@@ -1,0 +1,8 @@
+{
+  "name": "James Catalan Portfolio",
+  "description": "Portfolio of James Rolmer V. Catalan, a full-stack developer and systems architect building minimal, high-performance web systems.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
