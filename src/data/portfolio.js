@@ -35,22 +35,48 @@ export const socialLinks = [
   { name: 'Email', url: `mailto:${profile.email}`, handle: profile.email, icon: 'mail' },
 ]
 
+export const nowUpdatedAt = 'November 2026'
+
 export const nowItems = [
   {
+    slug: 'building',
     topic: 'Building',
     detail: 'Full-stack web applications and internal tools with React, TypeScript, and Node.js.',
+    title: 'Building useful software',
+    body: [
+      'I am focused on building full-stack products that feel simple to use and dependable to maintain.',
+      'My current work sits around React interfaces, Node.js services, and the small decisions that make a system easier to understand six months later.',
+    ],
   },
   {
+    slug: 'exploring',
     topic: 'Exploring',
     detail: 'Distributed backend patterns, zero-dependency tooling, and PostgreSQL query optimization.',
+    title: 'Exploring systems that stay understandable',
+    body: [
+      'I am studying distributed backend patterns, zero-dependency tooling, and PostgreSQL query optimization.',
+      'The goal is not complexity for its own sake. I want to understand the trade-offs well enough to choose the smallest reliable solution.',
+    ],
   },
   {
+    slug: 'education',
     topic: 'Education',
     detail: 'Polytechnic University of the Philippines (PUP) · BS in Information Technology.',
+    title: 'Learning through foundations',
+    body: [
+      'I am completing my BS in Information Technology at the Polytechnic University of the Philippines.',
+      'Alongside coursework, I use personal projects to turn concepts from databases, networking, and software design into working systems.',
+    ],
   },
   {
+    slug: 'availability',
     topic: 'Availability',
     detail: 'Open to software engineering roles and select freelance engagements.',
+    title: 'Open to thoughtful work',
+    body: [
+      'I am open to software engineering roles and select freelance engagements where I can contribute across product, frontend, and backend work.',
+      'If the problem is interesting and the team values clear, careful engineering, feel free to reach out.',
+    ],
   },
 ]
 

@@ -2,29 +2,29 @@
   /* ==========================================================================
      Dark Mode: Monochromatic Minimalism (vev.design)
      ========================================================================== */
-  --color-bg: #121212;
-  --color-bg-elevated: #181818;
+  --color-bg: #101312;
+  --color-bg-elevated: #171d19;
   --color-surface: transparent;
   --color-surface-hover: rgba(255, 255, 255, 0.035);
   --color-backdrop: rgba(12, 12, 12, 0.78);
 
-  --color-border: rgba(255, 255, 255, 0.075);
-  --color-border-strong: rgba(255, 255, 255, 0.18);
-  --color-border-light: rgba(255, 255, 255, 0.04);
+  --color-border: rgba(183, 210, 198, 0.12);
+  --color-border-strong: rgba(183, 210, 198, 0.24);
+  --color-border-light: rgba(183, 210, 198, 0.055);
 
-  --color-text: #e4e4e4;
-  --color-text-muted: #a0a0a0;
-  --color-text-faint: #6b6b6b;
+  --color-text: #edf2ee;
+  --color-text-muted: #a9b5ae;
+  --color-text-faint: #7c8981;
 
-  --color-accent: #ffffff;
-  --color-accent-subtle: rgba(255, 255, 255, 0.05);
-  --color-accent-active: #ffffff;
+  --color-accent: #79c7b5;
+  --color-accent-subtle: rgba(121, 199, 181, 0.12);
+  --color-accent-active: #a5e0d1;
 
-  --navbar-bg: rgba(18, 18, 18, 0.84);
-  --btn-primary-bg: #e4e4e4;
-  --btn-primary-text: #121212;
-  --selection-bg: rgba(228, 228, 228, 0.18);
-  --selection-text: #ffffff;
+  --navbar-bg: rgba(16, 19, 18, 0.86);
+  --btn-primary-bg: #edf2ee;
+  --btn-primary-text: #101312;
+  --selection-bg: rgba(121, 199, 181, 0.3);
+  --selection-text: #f2fffa;
 
   /* Typography — Exact Scoped Stacks */
   --font-p-mono: 'GeistMono', 'Geist Mono', ui-monospace, SFMono-Regular, "Roboto Mono", Menlo, Monaco, "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
@@ -58,27 +58,27 @@
   /* ==========================================================================
      Light Mode: Off-White / Beige / Cream Minimalistic Approach
      ========================================================================== */
-  --color-bg: #fbf9f5;
-  --color-bg-elevated: #f3efe6;
+  --color-bg: #f7faf7;
+  --color-bg-elevated: #edf3ee;
   --color-surface: transparent;
-  --color-surface-hover: rgba(34, 30, 26, 0.035);
-  --color-backdrop: rgba(34, 30, 26, 0.42);
+  --color-surface-hover: rgba(32, 54, 45, 0.045);
+  --color-backdrop: rgba(24, 43, 35, 0.42);
 
-  --color-border: rgba(34, 30, 26, 0.085);
-  --color-border-strong: rgba(34, 30, 26, 0.2);
-  --color-border-light: rgba(34, 30, 26, 0.045);
+  --color-border: rgba(32, 54, 45, 0.13);
+  --color-border-strong: rgba(32, 54, 45, 0.22);
+  --color-border-light: rgba(32, 54, 45, 0.05);
 
-  --color-text: #221e1a;
-  --color-text-muted: #5f574f;
-  --color-text-faint: #8e847a;
+  --color-text: #202a25;
+  --color-text-muted: #5c6761;
+  --color-text-faint: #69746d;
 
-  --color-accent: #221e1a;
-  --color-accent-subtle: rgba(34, 30, 26, 0.05);
-  --color-accent-active: #000000;
+  --color-accent: #176b63;
+  --color-accent-subtle: rgba(23, 107, 99, 0.1);
+  --color-accent-active: #0e554e;
 
-  --navbar-bg: rgba(251, 249, 245, 0.86);
-  --btn-primary-bg: #221e1a;
-  --btn-primary-text: #fbf9f5;
-  --selection-bg: rgba(34, 30, 26, 0.14);
-  --selection-text: #221e1a;
+  --navbar-bg: rgba(247, 250, 247, 0.88);
+  --btn-primary-bg: #202a25;
+  --btn-primary-text: #f7faf7;
+  --selection-bg: rgba(23, 107, 99, 0.18);
+  --selection-text: #202a25;
 }
