@@ -1,4 +1,4 @@
-import { profile, nowItems, nowUpdatedAt, socialLinks } from '@/data/portfolio'
+import { profile, nowItems, socialLinks } from '@/data/portfolio'
 import { AsciiPortrait } from '@/components/ui/AsciiPortrait/AsciiPortrait'
 import { Icon } from '@/components/ui'
 import './About.css'
@@ -14,11 +14,6 @@ export function About({ onNavigate, theme = 'dark' }) {
               {profile.name}
             </h1>
             <p className="about-pup-tag">pup ce &apos;27</p>
-          </div>
-
-          <div className="about-status" aria-label="Current availability">
-            <span className="about-status-dot" aria-hidden="true" />
-            <span>available for thoughtful collaborations</span>
           </div>
 
           <div className="about-lead">
@@ -94,40 +89,20 @@ export function About({ onNavigate, theme = 'dark' }) {
       <div className="about-now-section">
         <div className="about-now-header">
           <h2 className="about-now-title">Now</h2>
-          <span className="about-now-caption">updated {nowUpdatedAt.toLowerCase()}</span>
+          <span className="about-now-caption">updated september 2026</span>
         </div>
 
         <div className="editorial-list">
           {nowItems.map((item, idx) => (
-            <a
-              key={item.slug}
-              className="editorial-row about-now-row"
-              href={`#/now/${item.slug}`}
-              aria-label={`Read ${item.topic} update`}
-            >
+            <div key={item.topic} className="editorial-row about-now-row">
               <div className="editorial-meta">
                 <span className="editorial-index">0{idx + 1}</span>
                 <span className="editorial-submeta">{item.topic}</span>
               </div>
               <div className="editorial-body">
-                <div className="about-now-detail">
-                  {item.detail}
-                  {item.link && (
-                    <>
-                      {' '}
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="about-now-link"
-                      >
-                        {item.linkLabel || item.link}
-                      </a>
-                    </>
-                  )}
-                </div>
+                <div className="about-now-detail">{item.detail}</div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>

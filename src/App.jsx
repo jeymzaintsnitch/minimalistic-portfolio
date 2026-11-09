@@ -1,18 +1,12 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Navbar } from '@/components/layout'
-import { About, Work, Projects, Hobbies, NowPost } from '@/components/sections'
+import { About, Work, Projects, Hobbies } from '@/components/sections'
 
 const VALID_PAGES = ['about', 'work', 'hobbies', 'projects']
 
-function getRouteFromHash() {
+function getPageFromHash() {
   const hash = window.location.hash.replace(/^#\/?/, '').toLowerCase().trim()
-  const [page, slug] = hash.split('/')
-
-  if (page === 'now' && slug) {
-    return { page: 'now', slug }
-  }
-
-  return { page: VALID_PAGES.includes(page) ? page : 'about', slug: null }
+  return VALID_PAGES.includes(hash) ? hash : 'about'
 }
 
 function getInitialTheme() {
@@ -29,7 +23,7 @@ function getInitialTheme() {
 }
 
 function App() {
-  const [route, setRoute] = useState(getRouteFromHash)
+  const [activePage, setActivePage] = useState(getPageFromHash)
   const [theme, setTheme] = useState(getInitialTheme)
 
   useEffect(() => {
@@ -48,14 +42,15 @@ function App() {
   const navigateTo = useCallback((pageId) => {
     if (VALID_PAGES.includes(pageId)) {
       window.location.hash = pageId === 'about' ? '#/' : `#/${pageId}`
-      setRoute({ page: pageId, slug: null })
+      setActivePage(pageId)
       window.scrollTo({ top: 0, behavior: 'instant' })
     }
   }, [])
 
   useEffect(() => {
     const onHashChange = () => {
-      setRoute(getRouteFromHash())
+      const page = getPageFromHash()
+      setActivePage(page)
       window.scrollTo({ top: 0, behavior: 'instant' })
     }
 
@@ -84,21 +79,18 @@ function App() {
   return (
     <div className="portfolio-app">
       <Navbar
-        activePage={route.page === 'now' ? 'about' : route.page}
+        activePage={activePage}
         onNavigate={navigateTo}
         theme={theme}
         onToggleTheme={toggleTheme}
       />
 
       <main className="container portfolio-main-container" id="main-content">
-        <div key={`${route.page}-${route.slug || ''}`} className="page-view-enter">
-          {route.page === 'about' && <About onNavigate={navigateTo} theme={theme} />}
-          {route.page === 'now' && (
-            <NowPost slug={route.slug} onBack={() => navigateTo('about')} />
-          )}
-          {route.page === 'work' && <Work onNavigate={navigateTo} />}
-          {route.page === 'hobbies' && <Hobbies onNavigate={navigateTo} />}
-          {route.page === 'projects' && <Projects onNavigate={navigateTo} />}
+        <div key={activePage} className="page-view-enter">
+          {activePage === 'about' && <About onNavigate={navigateTo} theme={theme} />}
+          {activePage === 'work' && <Work onNavigate={navigateTo} />}
+          {activePage === 'hobbies' && <Hobbies onNavigate={navigateTo} />}
+          {activePage === 'projects' && <Projects onNavigate={navigateTo} />}
         </div>
       </main>
 
