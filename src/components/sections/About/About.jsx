@@ -110,7 +110,22 @@ export function About({ onNavigate, theme = 'dark' }) {
                 <span className="editorial-submeta">{item.topic}</span>
               </div>
               <div className="editorial-body">
-                <div className="about-now-detail">{item.detail}</div>
+                <div className="about-now-detail">
+                  {item.detail}
+                  {item.link && (
+                    <>
+                      {' '}
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="about-now-link"
+                      >
+                        {item.linkLabel || item.link}
+                      </a>
+                    </>
+                  )}
+                </div>
               </div>
             </a>
           ))}

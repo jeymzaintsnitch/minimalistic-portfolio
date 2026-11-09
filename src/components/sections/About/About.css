@@ -198,6 +198,18 @@
   margin: 0;
 }
 
+.about-now-link {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 0.18em;
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+.about-now-link:hover {
+  color: var(--color-accent);
+}
+
 @media (max-width: 820px) {
   .about-hero-grid {
     grid-template-columns: 1fr;

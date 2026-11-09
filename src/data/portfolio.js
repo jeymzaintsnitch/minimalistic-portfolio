@@ -39,42 +39,45 @@ export const nowUpdatedAt = 'November 2026'
 
 export const nowItems = [
   {
-    slug: 'building',
-    topic: 'Building',
-    detail: 'Full-stack web applications and internal tools with React, TypeScript, and Node.js.',
-    title: 'Building useful software',
+    slug: 'internship',
+    topic: 'Finished Internship in DOST-MIMAROPA',
+    detail: 'Enhanced and improved the current ICTrack Inventory System at',
+    linkLabel: 'DOST-MIMAROPA',
+    link: 'https://region4b.dost.gov.ph/',
+    title: 'Improving a government inventory system',
     body: [
-      'I am focused on building full-stack products that feel simple to use and dependable to maintain.',
-      'My current work sits around React interfaces, Node.js services, and the small decisions that make a system easier to understand six months later.',
-    ],
-  },
-  {
-    slug: 'exploring',
-    topic: 'Exploring',
-    detail: 'Distributed backend patterns, zero-dependency tooling, and PostgreSQL query optimization.',
-    title: 'Exploring systems that stay understandable',
-    body: [
-      'I am studying distributed backend patterns, zero-dependency tooling, and PostgreSQL query optimization.',
-      'The goal is not complexity for its own sake. I want to understand the trade-offs well enough to choose the smallest reliable solution.',
+      'I enhanced and improved the existing ICTrack Inventory System during my internship with DOST-MIMAROPA.',
+      'The experience strengthened my ability to work on practical systems that support day-to-day operations.',
     ],
   },
   {
     slug: 'education',
     topic: 'Education',
-    detail: 'Polytechnic University of the Philippines (PUP) · BS in Information Technology.',
+    detail: 'Currently pursuing a Diploma in Information Technology course from',
+    linkLabel: 'Polytechnic University of the Philippines - Taguig Campus',
+    link: 'https://www.pup.edu.ph/taguig/',
     title: 'Learning through foundations',
     body: [
-      'I am completing my BS in Information Technology at the Polytechnic University of the Philippines.',
+      'I am completing a Diploma in Information Technology at the Polytechnic University of the Philippines - Taguig Campus.',
       'Alongside coursework, I use personal projects to turn concepts from databases, networking, and software design into working systems.',
+    ],
+  },
+  {
+    slug: 'learning',
+    topic: 'Learning',
+    detail: 'Currently learning Java and Spring Boot for REST API development and Kotlin for mobile development.',
+    title: 'Expanding my development toolkit',
+    body: [
+      'I am currently learning Java and Spring Boot for REST API development, along with Kotlin for mobile development.',
     ],
   },
   {
     slug: 'availability',
     topic: 'Availability',
-    detail: 'Open to software engineering roles and select freelance engagements.',
+    detail: 'Open to internships and select freelance engagements.',
     title: 'Open to thoughtful work',
     body: [
-      'I am open to software engineering roles and select freelance engagements where I can contribute across product, frontend, and backend work.',
+      'I am open to internships and select freelance engagements where I can contribute across product, frontend, and backend work.',
       'If the problem is interesting and the team values clear, careful engineering, feel free to reach out.',
     ],
   },
@@ -216,13 +219,13 @@ export const hobbies = [
     note: 'On rotation: Tycho, Disasterpeace, Brian Eno, and Chrono Trigger arrangements.',
   },
   {
-    id: 'coffee',
+    id: 'writing',
     index: '03',
-    title: 'Pour-Over Coffee',
+    title: 'Writing',
     category: 'Ritual',
     description:
-      'Starting mornings with manual pour-over brewing—experimenting with single-origin roasts, grind uniformity, and extraction ratios.',
-    note: 'Setup: Hario V60 02 ceramic dripper, burr hand grinder, washed Ethiopian & Mt. Apo beans.',
+      'I love writing in a quiet space with a cup of coffee. It helps me reflect, plan, and reset my mind for the day.',
+    note: 'nice',
   },
   {
     id: 'badminton',
