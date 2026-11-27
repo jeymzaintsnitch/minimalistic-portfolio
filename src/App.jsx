@@ -3,7 +3,7 @@ import { Route, Routes, useLocation, useNavigate, useParams } from 'react-router
 import { Footer, Navbar } from '@/components/layout'
 import { About, Work, Projects, Hobbies } from '@/components/sections'
 import { ContentDetail } from '@/components/sections/ContentDetail'
-import { formatDocumentTitle, profile } from '@/data/portfolio'
+import { formatDocumentTitle } from '@/data/portfolio'
 
 const VALID_PAGES = ['about', 'work', 'hobbies', 'projects']
 
@@ -66,11 +66,6 @@ function App() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
   }, [location.pathname])
-
-  useEffect(() => {
-    const favicon = document.querySelector('link[rel="icon"]')
-    if (favicon) favicon.href = profile.favicon
-  }, [])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 // A heading can be plain text, an external link, or a detail-page link.
-export function getEntryHref(entry, section) {
+function getEntryHref(entry, section) {
   return entry.href || entry.headingLink || (entry.detailPage === false ? null : `/${section}/${entry.slug || entry.id}`)
 }
 
