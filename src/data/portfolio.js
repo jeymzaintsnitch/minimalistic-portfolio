@@ -140,7 +140,6 @@ export const hobbies = [
     detailPage: false,
     index: '01',
     title: 'Gaming',
-    category: 'Games',
     description:
       'Recently playing Ghost Recon Wildlands and Breakpoint. Add me on Steam: @Jeymz101.',
   },
@@ -149,7 +148,6 @@ export const hobbies = [
     detailPage: false,
     index: '02',
     title: 'Building PC Rigs',
-    category: 'Hardware',
     description:
       'Building PC rigs, fixing hardware issues, and troubleshooting broken PC components.',
   },
@@ -158,17 +156,15 @@ export const hobbies = [
     detailPage: true,
     index: '03',
     title: 'Writing',
-    category: 'Ritual',
     description:
-      'I love writing in a quiet space with a cup of coffee. It helps me reflect, plan, and reset my mind for the day.',
+      'coming soon.',
   },
   {
     id: 'cycling',
     detailPage: false,
     index: '04',
     title: 'Cycling',
-    category: 'Movement',
     description:
-      'Building and assembling a bike soon because my current bike is trash.',
+      'Assembling bike soon cuz my current bike is trash.',
   },
 ]
