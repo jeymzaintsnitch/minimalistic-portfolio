@@ -13,9 +13,7 @@
 
 .section-hobbies .hobby-row {
   display: block;
-  grid-template-columns: none;
   padding: 0;
-  gap: 0;
 }
 
 .hobby-content {
