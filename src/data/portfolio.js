@@ -126,7 +126,7 @@ export const workExperience = [
     detailPage: false,
     href: 'https://region4b.dost.gov.ph/',
     images: dostPhotos,
-    role: 'Technical Support and Junior Dev',
+    role: 'IT Intern',
     company: 'DOST-MIMAROPA',
     period: 'July 2026 — October 2026',
     description:
@@ -138,7 +138,6 @@ export const hobbies = [
   {
     id: 'gaming',
     detailPage: false,
-    index: '01',
     title: 'Gaming',
     description:
       'Recently playing Ghost Recon Wildlands and Breakpoint. Add me on Steam: @Jeymz101.',
@@ -146,7 +145,6 @@ export const hobbies = [
   {
     id: 'pc-rigs',
     detailPage: false,
-    index: '02',
     title: 'Building PC Rigs',
     description:
       'Building PC rigs, fixing hardware issues, and troubleshooting broken PC components.',
@@ -154,7 +152,6 @@ export const hobbies = [
   {
     id: 'writing',
     detailPage: true,
-    index: '03',
     title: 'Writing',
     description:
       'coming soon.',
@@ -162,7 +159,6 @@ export const hobbies = [
   {
     id: 'cycling',
     detailPage: false,
-    index: '04',
     title: 'Cycling',
     description:
       'Assembling bike soon cuz my current bike is trash.',
