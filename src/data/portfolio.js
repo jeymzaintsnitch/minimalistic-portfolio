@@ -23,7 +23,7 @@ export const profile = {
     { text: ', providing technical support and improving the ' },
     {
       text: 'ICTrack Inventory System',
-      href: '#/projects/ictrack',
+      href: '#/projects/ictrack-inventory-system',
       highlight: true,
     },
     { text: '.' },
