@@ -142,6 +142,15 @@
   max-width: 290px;
 }
 
+.about-portrait-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-xs);
+  filter: grayscale(1) contrast(1.05);
+}
+
 /* "Now" Section — Single Grid, Kavin-Style Rows */
 .about-now-section {
   margin-top: 3.5rem;

@@ -34,7 +34,11 @@ function App() {
   const [theme, setTheme] = useState(getInitialTheme)
 
   useEffect(() => {
-    if (!route.slug) document.title = `${route.page === 'about' ? 'About' : route.page.charAt(0).toUpperCase() + route.page.slice(1)} | James Catalan`
+    if (!route.slug) {
+      document.title = route.page === 'about'
+        ? 'James Rolmer V. Catalan'
+        : `${route.page.charAt(0).toUpperCase() + route.page.slice(1)} — James Rolmer V. Catalan`
+    }
   }, [route.page, route.slug])
 
   useEffect(() => {

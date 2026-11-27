@@ -1,11 +1,10 @@
 import { profile, nowItems, nowUpdatedAt, socialLinks } from '@/data/portfolio'
-import { AsciiPortrait } from '@/components/ui/AsciiPortrait/AsciiPortrait'
 import { Icon } from '@/components/ui'
 import { EntryHeading } from '../EntryHeading'
 import { Ganap } from './Ganap'
 import './About.css'
 
-export function About({ theme = 'dark' }) {
+export function About() {
   return (
     <section id="about" className="section-about">
       {/* Hero Split */}
@@ -77,13 +76,13 @@ export function About({ theme = 'dark' }) {
           </div>
         </div>
 
-        {/* Minimalist ASCII Portrait */}
+        {/* Profile portrait */}
         <div className="about-portrait-wrap">
           <figure className="about-portrait-figure">
-            <AsciiPortrait
+            <img
+              className="about-portrait-image"
               src={profile.avatar}
               alt={`Portrait of ${profile.name}`}
-              theme={theme}
             />
           </figure>
         </div>

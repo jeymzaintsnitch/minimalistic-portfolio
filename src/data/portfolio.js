@@ -2,7 +2,7 @@
 // Minimalist, content-first, and straightforward
 
 export const profile = {
-  name: 'James Catalan',
+  name: 'James Rolmer V. Catalan',
   fullName: 'James Rolmer V. Catalan',
   firstName: 'James',
   heroLabel: "pup taguig '27",

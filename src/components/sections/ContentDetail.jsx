@@ -25,7 +25,7 @@ export function ContentDetail({ section, slug }) {
 
   useEffect(() => {
     headingRef.current?.focus({ preventScroll: true })
-    document.title = `${title} | James Catalan`
+    document.title = `${title} — James Rolmer V. Catalan`
   }, [title, slug])
 
     return (
