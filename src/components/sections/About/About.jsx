@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import { profile, nowItems, nowUpdatedAt, socialLinks } from '@/data/portfolio'
 import { Icon } from '@/components/ui'
+import { AsciiPortrait } from '@/components/ui/AsciiPortrait/AsciiPortrait'
 import { EntryHeading } from '../EntryHeading'
 import { Ganap } from './Ganap'
 import './About.css'
 
-export function About() {
+export function About({ theme = 'dark' }) {
   return (
     <section id="about" className="section-about">
       {/* Hero Split */}
@@ -84,13 +85,13 @@ export function About() {
           </div>
         </div>
 
-        {/* Profile portrait */}
+        {/* ASCII portrait */}
         <div className="about-portrait-wrap">
           <figure className="about-portrait-figure">
-            <img
-              className="about-portrait-image"
+            <AsciiPortrait
               src={profile.avatar}
-              alt={`Portrait of ${profile.fullName}`}
+              alt={`ASCII portrait of ${profile.fullName}`}
+              theme={theme}
             />
           </figure>
         </div>

@@ -1,0 +1,48 @@
+.ascii-portrait {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.91;
+  overflow: hidden;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+}
+
+.ascii-source,
+.ascii-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ascii-source {
+  object-fit: cover;
+  filter: grayscale(1);
+  opacity: 0.08;
+}
+
+.ascii-canvas {
+  display: block;
+}
+
+.ascii-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--color-border-strong);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.ascii-corner-top {
+  top: 10px;
+  left: 10px;
+  border-width: 1px 0 0 1px;
+}
+
+.ascii-corner-bottom {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 1px 1px 0;
+}
