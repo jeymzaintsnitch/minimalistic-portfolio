@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { getEntryNavigation } from '../EntryHeading'
 
 /**
@@ -8,12 +9,12 @@ import { getEntryNavigation } from '../EntryHeading'
 export function ProjectCard({ project }) {
   const { title, description, technologies = [] } = project
   const { href, isExternal, arrow } = getEntryNavigation(project, 'projects')
-  const Card = href ? 'a' : 'article'
+  const Card = href ? (isExternal ? 'a' : Link) : 'article'
 
   return (
     <Card
       className={`entry-card project-grid-cell ${href ? 'is-linked' : ''}`.trim()}
-      {...(href ? { href } : {})}
+      {...(href ? (isExternal ? { href } : { to: href }) : {})}
       {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
       <div className="entry-card-heading project-title-row">

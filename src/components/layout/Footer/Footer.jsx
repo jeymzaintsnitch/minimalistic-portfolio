@@ -7,17 +7,18 @@ const SECTION_LABELS = {
 
 export function Footer({ page, isDetail }) {
   const sectionLabel = SECTION_LABELS[page] || 'about'
-  const sectionHref = page === 'now' ? '#/' : `#/${page}`
+  const sectionHref = page === 'now' ? '/' : `/${page}`
 
   return (
     <footer className="minimal-footer">
       {isDetail ? (
-        <a href={sectionHref}>← {page === 'now' ? sectionLabel : `all ${sectionLabel}`}</a>
+        <Link to={sectionHref}>← {page === 'now' ? sectionLabel : `all ${sectionLabel}`}</Link>
       ) : (
         <span>© 2026 James Rolmer V. Catalan</span>
       )}
 
-      {(isDetail || page !== 'about') && <a href="#/">james.dev</a>}
+      {(isDetail || page !== 'about') && <Link to="/">james.dev</Link>}
     </footer>
   )
 }
+import { Link } from 'react-router-dom'

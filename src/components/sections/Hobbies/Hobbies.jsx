@@ -1,15 +1,16 @@
+import { Link } from 'react-router-dom'
 import { hobbies } from '@/data/portfolio'
 import { getEntryNavigation } from '../EntryHeading'
 import './Hobbies.css'
 
 function HobbyCard({ hobby }) {
   const { href, isExternal, arrow } = getEntryNavigation(hobby, 'hobbies')
-  const Card = href ? 'a' : 'article'
+  const Card = href ? (isExternal ? 'a' : Link) : 'article'
 
   return (
     <Card
       className={`entry-card editorial-row hobby-row ${href ? 'is-linked' : ''}`.trim()}
-      {...(href ? { href } : {})}
+      {...(href ? (isExternal ? { href } : { to: href }) : {})}
       {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
       <div className="hobby-content">

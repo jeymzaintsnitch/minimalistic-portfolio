@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { profile, nowItems, nowUpdatedAt, socialLinks } from '@/data/portfolio'
 import { Icon } from '@/components/ui'
 import { EntryHeading } from '../EntryHeading'
@@ -20,14 +21,21 @@ export function About() {
           <p className="about-bio">
             {profile.bio.map((segment, index) => (
               segment.href ? (
-                <a
+                segment.external ? <a
                   key={`${segment.text}-${index}`}
                   href={segment.href}
                   className={`about-bio-link ${segment.highlight ? 'is-highlighted' : ''}`.trim()}
-                  {...(segment.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {segment.text}
-                </a>
+                </a> : <Link
+                  key={`${segment.text}-${index}`}
+                  to={segment.href}
+                  className={`about-bio-link ${segment.highlight ? 'is-highlighted' : ''}`.trim()}
+                >
+                  {segment.text}
+                </Link>
               ) : segment.text
             ))}
           </p>
