@@ -30,7 +30,7 @@ export function Hobbies() {
         <div className="section-head-copy">
           <h1 className="section-heading">hobbies</h1>
           <p className="section-subtext">
-            keyboards, music, writing, and time away from code.
+            gaming and other things i do when i'm bored.
           </p>
         </div>
       </div>

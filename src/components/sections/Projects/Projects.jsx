@@ -14,7 +14,7 @@ export function Projects({ projects = defaultProjects }) {
         <div className="section-head-copy">
           <h1 className="section-heading">projects</h1>
           <p className="section-subtext">
-            web apps and tools i've built.
+            few things i've worked on.
           </p>
         </div>
       </div>

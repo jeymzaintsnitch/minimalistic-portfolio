@@ -10,7 +10,7 @@ export function Work() {
         <div className="section-head-copy">
           <h1 className="section-heading">work</h1>
           <p className="section-subtext">
-            a few things i've worked on.
+            experiences so far.
           </p>
         </div>
       </div>

@@ -83,16 +83,11 @@ export const nowItems = [
     detail: 'learning Java and Spring Boot while building REST APIs.',
   },
   {
-    slug: 'availability',
-    label: 'availability',
+    slug: 'gta-6',
+    label: 'waiting for',
     detailPage: false,
-    topic: 'Availability',
-    detail: 'Open to internships and select freelance engagements.',
-    title: 'Open to thoughtful work',
-    body: [
-      'I am open to internships and select freelance engagements where I can contribute across product, frontend, and backend work.',
-      'If the problem is interesting and the team values clear, careful engineering, feel free to reach out.',
-    ],
+    topic: 'GTA 6 on PC',
+    detail: '(lol)',
   },
 ]
 
