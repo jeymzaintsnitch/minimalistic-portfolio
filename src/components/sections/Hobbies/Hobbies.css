@@ -11,8 +11,7 @@
   grid-auto-rows: 1fr;
 }
 
-.section-hobbies .hobby-row,
-.section-hobbies .hobby-row:last-child {
+.section-hobbies .hobby-row {
   display: block;
   grid-template-columns: none;
   padding: 0;
