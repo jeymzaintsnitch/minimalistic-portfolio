@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { Footer, Navbar } from '@/components/layout'
 import { About, Work, Projects, Hobbies } from '@/components/sections'
 import { ContentDetail } from '@/components/sections/ContentDetail'
+import { formatDocumentTitle, profile } from '@/data/portfolio'
 
 const VALID_PAGES = ['about', 'work', 'hobbies', 'projects']
 
@@ -35,11 +36,17 @@ function App() {
 
   useEffect(() => {
     if (!route.slug) {
-      document.title = route.page === 'about'
-        ? 'James Rolmer V. Catalan'
-        : `${route.page.charAt(0).toUpperCase() + route.page.slice(1)} — James Rolmer V. Catalan`
+      const pageTitle = route.page === 'about'
+        ? null
+        : route.page.charAt(0).toUpperCase() + route.page.slice(1)
+      document.title = formatDocumentTitle(pageTitle)
     }
   }, [route.page, route.slug])
+
+  useEffect(() => {
+    const favicon = document.querySelector('link[rel="icon"]')
+    if (favicon) favicon.href = profile.favicon
+  }, [])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)

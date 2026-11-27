@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import projects from '@/data/projects.json'
-import { hobbies, nowItems, nowUpdatedAt, workExperience } from '@/data/portfolio'
+import { formatDocumentTitle, hobbies, nowItems, nowUpdatedAt, workExperience } from '@/data/portfolio'
 import './ContentDetail.css'
 
 function ContentImage({ image }) {
@@ -25,7 +25,7 @@ export function ContentDetail({ section, slug }) {
 
   useEffect(() => {
     headingRef.current?.focus({ preventScroll: true })
-    document.title = `${title} — James Rolmer V. Catalan`
+    document.title = formatDocumentTitle(title)
   }, [title, slug])
 
     return (

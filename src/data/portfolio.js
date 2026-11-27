@@ -2,7 +2,7 @@
 // Minimalist, content-first, and straightforward
 
 export const profile = {
-  name: 'James Rolmer V. Catalan',
+  name: 'James Catalan',
   fullName: 'James Rolmer V. Catalan',
   firstName: 'James',
   heroLabel: "pup taguig '27",
@@ -41,6 +41,11 @@ export const profile = {
     url: 'https://www.pup.edu.ph/taguig/',
   },
   avatar: '/assets/aistudio/Studio_portrait_with_center-parted_curtain_hair_364bd15b.png',
+  favicon: '/favicon.png',
+}
+
+export function formatDocumentTitle(pageTitle) {
+  return pageTitle ? `${pageTitle} — ${profile.fullName}` : profile.fullName
 }
 
 export const navLinks = [

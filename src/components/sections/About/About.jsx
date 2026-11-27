@@ -12,7 +12,7 @@ export function About() {
         <div className="about-hero-copy">
           <div className="about-name-group">
             <h1 className="about-title">
-              {profile.name}
+              {profile.fullName}
             </h1>
             {profile.heroLabel && <p className="about-pup-tag">{profile.heroLabel}</p>}
           </div>
@@ -82,7 +82,7 @@ export function About() {
             <img
               className="about-portrait-image"
               src={profile.avatar}
-              alt={`Portrait of ${profile.name}`}
+              alt={`Portrait of ${profile.fullName}`}
             />
           </figure>
         </div>
