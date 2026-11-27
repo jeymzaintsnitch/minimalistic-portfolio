@@ -5,9 +5,29 @@ export const profile = {
   name: 'James Catalan',
   fullName: 'James Rolmer V. Catalan',
   firstName: 'James',
+  heroLabel: "pup taguig '27",
   title: 'Full-Stack Developer & Systems Engineer',
-  headline: 'Building clean, fast web applications and reliable backend systems.',
-  bio: 'Based in Manila, Philippines. I design and engineer web software with React, TypeScript, Node.js, and PostgreSQL—focusing on simple architectures, predictable state, and quiet, responsive interfaces.',
+  bio: [
+    { text: 'Currently taking a Diploma in Information Technology at the ' },
+    {
+      text: 'Polytechnic University of the Philippines – Taguig',
+      href: 'https://www.pup.edu.ph/taguig/',
+      external: true,
+    },
+    { text: '. I recently completed an internship at ' },
+    {
+      text: 'DOST-MIMAROPA',
+      href: 'https://region4b.dost.gov.ph/',
+      external: true,
+    },
+    { text: ', providing technical support and improving the ' },
+    {
+      text: 'ICTrack Inventory System',
+      href: '#/projects/ictrack',
+      highlight: true,
+    },
+    { text: '.' },
+  ],
   email: 'jamescatalan19@gmail.com',
   location: 'Manila, Philippines',
   timezone: 'Asia/Manila',
@@ -16,8 +36,9 @@ export const profile = {
   resumeUrl: '/resume.pdf',
   education: {
     institution: 'Polytechnic University of the Philippines',
-    degree: 'BS in Information Technology',
-    period: '2021 — 2025',
+    degree: 'Diploma in Information Technology',
+    period: '2024 — Present',
+    url: 'https://www.pup.edu.ph/taguig/',
   },
   avatar: '/assets/aistudio/Studio_portrait_with_center-parted_curtain_hair_364bd15b.png',
 }
@@ -35,67 +56,93 @@ export const socialLinks = [
   { name: 'Email', url: `mailto:${profile.email}`, handle: profile.email, icon: 'mail' },
 ]
 
+export const nowUpdatedAt = 'November 2026'
+
 export const nowItems = [
   {
-    topic: 'Building',
-    detail: 'Full-stack web applications and internal tools with React, TypeScript, and Node.js.',
+    slug: 'internship',
+    label: 'recently',
+    detailPage: false,
+    href: 'https://region4b.dost.gov.ph/',
+    topic: 'Finished Internship in DOST-MIMAROPA',
+    detail: 'Enhanced and improved the current ICTrack Inventory System.',
   },
   {
-    topic: 'Exploring',
-    detail: 'Distributed backend patterns, zero-dependency tooling, and PostgreSQL query optimization.',
+    slug: 'education',
+    label: 'studying',
+    detailPage: false,
+    topic: 'taking Information Technology at PUP-Taguig',
+    href: 'https://www.pup.edu.ph/taguig/',
+    detail: 'Learning through coursework and personal projects in databases, networking, and software design.',
   },
   {
-    topic: 'Education',
-    detail: 'Polytechnic University of the Philippines (PUP) · BS in Information Technology.',
+    slug: 'learning',
+    label: 'learning',
+    detailPage: false,
+    topic: 'building REST APIs with Spring Boot',
+    detail: 'learning Java and Spring Boot while building REST APIs.',
   },
   {
+    slug: 'availability',
+    label: 'availability',
+    detailPage: false,
     topic: 'Availability',
-    detail: 'Open to software engineering roles and select freelance engagements.',
+    detail: 'Open to internships and select freelance engagements.',
+    title: 'Open to thoughtful work',
+    body: [
+      'I am open to internships and select freelance engagements where I can contribute across product, frontend, and backend work.',
+      'If the problem is interesting and the team values clear, careful engineering, feel free to reach out.',
+    ],
   },
 ]
 
+export const dostPhotos = [
+  {
+    src: '/assets/work/dost-mimaropa/technical-support.jpg',
+    alt: 'Providing technical support at a DOST-MIMAROPA workstation',
+    width: 1500,
+    height: 2000,
+  },
+  {
+    src: '/assets/work/dost-mimaropa/system-setup.jpg',
+    alt: 'Setting up a computer system at DOST-MIMAROPA',
+    width: 2000,
+    height: 1500,
+  },
+  {
+    src: '/assets/work/dost-mimaropa/workstation-deployment.jpg',
+    alt: 'Deploying office workstations at DOST-MIMAROPA',
+    width: 2000,
+    height: 1500,
+  },
+]
+
+export const ganap = {
+  title: 'ganap',
+  description: 'mga ganap sa buhay ng isang unemployed IT student (awit)',
+  images: dostPhotos,
+}
+
 export const workExperience = [
   {
-    index: '01',
-    role: 'Full-Stack Developer',
-    company: 'Independent & Client Work',
-    location: 'Manila, PH',
-    period: '2023 — Present',
-    description:
-      'Designing and shipping end-to-end web applications for early-stage teams and local businesses, from relational schema design to minimal frontend interfaces.',
-    highlights: [
-      'Engineered fast, accessible client applications with sub-100ms interaction latency.',
-      'Architected REST APIs, webhook consumers, and background job queues in Node.js.',
-      'Modeled normalized PostgreSQL schemas with composite indexing and query profiling.',
-    ],
-  },
-  {
-    index: '02',
-    role: 'Frontend Lead',
-    company: 'SparkFest Hackathon Platform',
-    location: 'Manila, PH',
-    period: '2024 — 2025',
-    description:
-      'Led frontend architecture for the registration, live schedule, and real-time judging portal used during collegiate developer hackathons.',
-    highlights: [
-      'Built real-time schedule synchronization and rubric scoring views for judges.',
-      'Established component standards, Git review workflows, and zero-downtime deploys.',
-      'Maintained 100% availability across peak project submission windows.',
-    ],
-  },
-  {
-    index: '03',
-    role: 'Systems Developer',
+    id: 'pup',
+    detailPage: false,
+    href: 'https://www.pup.edu.ph/taguig/',
+    role: 'Diploma in Information Technology',
     company: 'Polytechnic University of the Philippines',
-    location: 'Manila, PH',
-    period: '2021 — 2025',
+    period: '2024 — Present',
+    description: 'Currently taking a Diploma in Information Technology.',
+  },
+  {
+    id: 'dost-mimaropa',
+    detailPage: false,
+    href: 'https://region4b.dost.gov.ph/',
+    images: dostPhotos,
+    role: 'Technical Support and Junior Dev',
+    company: 'DOST-MIMAROPA',
+    period: 'July 2026 — October 2026',
     description:
-      'Developed academic assessment modules and departmental web utilities supporting faculty and student workflows.',
-    highlights: [
-      'Created automated examination and rubric evaluation workflows for large cohorts.',
-      'Enforced transactional integrity on grading records using row-level locks.',
-      'Partnered with faculty to simplify complex administrative forms into clean views.',
-    ],
+      'Providing technical support across all departments and enhancing the current inventory management system into a feasible solution.',
   },
 ]
 
@@ -172,57 +219,40 @@ export const curatedProjects = [
 
 export const hobbies = [
   {
-    id: 'keyboards',
+    id: 'gaming',
+    detailPage: false,
     index: '01',
-    title: 'Mechanical Keyboards',
+    title: 'Gaming',
+    category: 'Games',
+    description:
+      'Recently playing Ghost Recon Wildlands and Breakpoint. Add me on Steam: @Jeymz101.',
+  },
+  {
+    id: 'pc-rigs',
+    detailPage: false,
+    index: '02',
+    title: 'Building PC Rigs',
     category: 'Hardware',
     description:
-      'Building and tuning custom mechanical keyboards—lubing switches, soldering PCBs, and dialing in clean typing acoustics.',
-    note: 'Daily driver: 65% gasket-mounted aluminum board with linear switches and custom QMK keymap.',
+      'Building PC rigs, fixing hardware issues, and troubleshooting broken PC components.',
   },
   {
-    id: 'music',
-    index: '02',
-    title: 'Ambient & Synth Music',
-    category: 'Audio',
-    description:
-      'Curating instrumental soundtracks for deep programming sessions: ambient electronics, analog synthwave, and classic game scores.',
-    note: 'On rotation: Tycho, Disasterpeace, Brian Eno, and Chrono Trigger arrangements.',
-  },
-  {
-    id: 'coffee',
+    id: 'writing',
+    detailPage: true,
     index: '03',
-    title: 'Pour-Over Coffee',
+    title: 'Writing',
     category: 'Ritual',
     description:
-      'Starting mornings with manual pour-over brewing—experimenting with single-origin roasts, grind uniformity, and extraction ratios.',
-    note: 'Setup: Hario V60 02 ceramic dripper, burr hand grinder, washed Ethiopian & Mt. Apo beans.',
+      'I love writing in a quiet space with a cup of coffee. It helps me reflect, plan, and reset my mind for the day.',
+    note: 'nice',
   },
   {
-    id: 'badminton',
+    id: 'cycling',
+    detailPage: false,
     index: '04',
-    title: 'Badminton',
+    title: 'Cycling',
     category: 'Movement',
     description:
-      'Playing weekly doubles matches for footwork, reflexes, and a physical reset away from the terminal.',
-    note: 'Routine: Weekend court sessions in Manila.',
-  },
-  {
-    id: 'reading',
-    index: '05',
-    title: 'Technical & Design Monographs',
-    category: 'Reading',
-    description:
-      'Reading foundational books on distributed systems, database internals, and industrial design philosophy.',
-    note: 'Shelf: Designing Data-Intensive Applications, The Design of Everyday Things, Dieter Rams: Ten Principles.',
-  },
-  {
-    id: 'gaming',
-    index: '06',
-    title: 'Retro 16-Bit Gaming',
-    category: 'Archive',
-    description:
-      'Appreciating classic 16-bit and 32-bit RPGs, pixel art craftsmanship, and portable Linux handhelds.',
-    note: 'All-time favorites: Chrono Trigger, Castlevania: Symphony of the Night, Final Fantasy VI.',
+      'Building and assembling a bike soon because my current bike is trash.',
   },
 ]

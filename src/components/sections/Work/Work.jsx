@@ -1,62 +1,46 @@
 import { workExperience } from '@/data/portfolio'
+import { EntryHeading } from '../EntryHeading'
+import { WorkGallery } from './WorkGallery'
 import './Work.css'
 
-export function Work({ onNavigate }) {
+export function Work() {
   return (
     <section id="work" className="section-work">
       <div className="section-head">
         <div className="section-head-copy">
           <h1 className="section-heading">work</h1>
           <p className="section-subtext">
-            software engineering experience, leadership, and systems development.
+            a few things i've worked on.
           </p>
         </div>
-        <span className="minimal-kbd tabular">{workExperience.length} roles</span>
       </div>
 
-      <div className="editorial-list">
-        {workExperience.map((item) => (
-          <article key={item.company} className="editorial-row work-row">
-            <div className="editorial-meta">
-              <span className="editorial-index tabular">{item.period}</span>
-              <span className="editorial-submeta">{item.company}</span>
-            </div>
+      <div className="work-experience">
+        <h2 className="work-experience-title">experience</h2>
 
-            <div className="editorial-body">
-              <h2 className="work-role">{item.role}</h2>
-              <div className="work-desc">{item.description}</div>
+        <ol className="work-list">
+          {workExperience.map((item) => (
+            <li key={item.id} className="work-item">
+              <div className="work-item-heading">
+                <span className="work-item-dot" aria-hidden="true" />
+                <h3 className="work-company">
+                  <EntryHeading entry={item} section="work" className="work-entry-link">
+                    {item.company}
+                  </EntryHeading>
+                </h3>
+                <span className="work-period">{item.period}</span>
+              </div>
 
-              <ul className="work-highlights">
-                {item.highlights.map((h, idx) => (
-                  <li key={idx} className="work-highlight-item">
-                    {h}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        ))}
+              <p className="work-role">{item.role}</p>
+              <p className="work-desc">{item.description}</p>
+
+              {item.images?.length > 0 && (
+                <WorkGallery company={item.company} images={item.images} />
+              )}
+            </li>
+          ))}
+        </ol>
       </div>
-
-      {onNavigate && (
-        <div className="page-nav-footer">
-          <button
-            type="button"
-            className="page-nav-link"
-            onClick={() => onNavigate('about')}
-          >
-            <span>← James</span>
-          </button>
-          <span className="minimal-kbd">02 / 04</span>
-          <button
-            type="button"
-            className="page-nav-link"
-            onClick={() => onNavigate('hobbies')}
-          >
-            <span>Hobbies →</span>
-          </button>
-        </div>
-      )}
     </section>
   )
 }

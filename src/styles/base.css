@@ -55,7 +55,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   letter-spacing: -0.01em;
-  transition: background-color var(--duration-fast) var(--ease-smooth), color var(--duration-fast) var(--ease-smooth);
+  transition: background-color var(--duration-base) var(--ease-smooth), color var(--duration-base) var(--ease-smooth);
 }
 
 #root {
@@ -66,10 +66,13 @@ body {
 .portfolio-app {
   display: flex;
   flex-direction: column;
+  min-height: 100dvh;
 }
 
 .portfolio-main-container {
-  padding-bottom: 0;
+  flex: 1 0 auto;
+  padding-bottom: 5rem;
+  position: relative;
 }
 
 h1,
@@ -185,10 +188,22 @@ pre,
   gap: 0.25rem;
 }
 
+:is(.section-work, .section-hobbies, .section-projects) > .section-head {
+  width: min(100%, var(--section-copy-max));
+  margin-inline: auto;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+:is(.section-work, .section-hobbies, .section-projects) > .section-head + * {
+  margin-top: var(--section-content-gap);
+}
+
 .section-head-copy > h1.section-heading,
 .section-heading {
   font-family: "Instrument Serif", "Instrument Serif Fallback", "Iowan Old Style", Georgia, serif;
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-size: var(--page-title-size);
   font-weight: 400;
   color: var(--color-text);
   letter-spacing: -0.02em;
@@ -217,7 +232,7 @@ pre,
 
 @media (hover: hover) {
   .editorial-list:hover .editorial-row {
-    opacity: 0.52;
+    opacity: 1;
   }
   .editorial-list:hover .editorial-row:hover,
   .editorial-list:hover .editorial-row:focus-within {
@@ -267,6 +282,129 @@ pre,
   gap: 0.65rem;
 }
 
+/* Shared linked-card system for data-driven Hobbies and Projects entries. */
+.entry-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin-top: var(--card-grid-offset);
+  border-top: var(--line-thin) dashed var(--color-border);
+  border-left: var(--line-thin) dashed var(--color-border);
+}
+
+.entry-card {
+  position: relative;
+  overflow: hidden;
+  color: inherit;
+  background: var(--color-bg);
+  border: 0;
+  border-right: var(--line-thin) dashed var(--color-border);
+  border-bottom: var(--line-thin) dashed var(--color-border);
+  border-radius: 0;
+  text-decoration: none;
+  transition: background-color var(--duration-fast) var(--ease-smooth);
+}
+
+.entry-card.is-linked::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--line-thin);
+  background: var(--color-accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--duration-deliberate) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .entry-card.is-linked:hover {
+    background: var(--color-surface-hover);
+  }
+
+  .entry-card.is-linked:hover::before {
+    transform: scaleY(1);
+  }
+}
+
+.entry-card.is-linked:focus-visible {
+  background: var(--color-surface-hover);
+}
+
+.entry-card.is-linked:focus-visible::before {
+  transform: scaleY(1);
+}
+
+.entry-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--card-heading-gap);
+  width: 100%;
+}
+
+.entry-card-arrow {
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
+  font-size: var(--card-arrow-size);
+  color: var(--color-text-muted);
+}
+
+/* Small editorial cards shared by Now, Work, and Hobbies. */
+:is(.about-now-section, .section-work, .section-hobbies) .editorial-list:not(.entry-card-grid) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  padding-top: 0.85rem;
+}
+
+:is(.about-now-section, .section-work, .section-hobbies) .editorial-row:not(.entry-card) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  transition: border-color var(--duration-base) var(--ease-smooth);
+}
+
+:is(.about-now-section, .section-work, .section-hobbies) .editorial-row:not(.entry-card):last-child {
+  border-bottom: 1px solid transparent;
+}
+
+:is(.about-now-section, .section-work, .section-hobbies) .editorial-row:not(.entry-card):focus-within {
+  border-color: var(--color-border);
+}
+
+:is(.about-now-section, .section-work, .section-hobbies) .editorial-meta {
+  padding-top: 0;
+}
+
+:is(.about-now-section, .section-work, .section-hobbies) .editorial-submeta {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--color-text);
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+:is(.about-now-section, .section-work, .section-hobbies) .detail-title-link {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+:is(.about-now-section, .section-work, .section-hobbies) .detail-title-link::after {
+  content: none;
+}
+
+:is(.about-now-section, .section-work, .section-hobbies) .detail-title-link:hover,
+:is(.about-now-section, .section-work, .section-hobbies) .detail-title-link:focus-visible {
+  color: var(--color-accent-active);
+}
+
 /* Page Navigation Footer */
 .page-nav-footer {
   display: flex;
@@ -295,18 +433,32 @@ pre,
 
 /* Minimalist Footer */
 .minimal-footer {
-  width: 100%;
-  max-width: var(--container-max);
+  width: min(100%, var(--section-copy-max));
+  max-width: none;
+  margin-top: var(--page-footer-gap);
   margin-inline: auto;
-  padding: 1.5rem var(--container-padding) 2.5rem;
+  padding-top: var(--page-footer-padding);
+  border-top: var(--line-thin) dashed var(--color-border);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   gap: 1rem;
   flex-wrap: wrap;
-  font-family: var(--font-body);
-  font-size: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.65;
+  text-transform: lowercase;
   color: var(--color-text-faint);
+}
+
+.minimal-footer a {
+  color: inherit;
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+.minimal-footer a:hover,
+.minimal-footer a:focus-visible {
+  color: var(--color-accent-active);
 }
 
 .minimal-footer-group {
@@ -380,6 +532,14 @@ pre,
 }
 
 @media (max-width: 720px) {
+  .entry-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  :is(.about-now-section, .section-work, .section-hobbies) .editorial-list {
+    grid-template-columns: 1fr;
+  }
+
   .editorial-row {
     grid-template-columns: 1fr;
     gap: 0.45rem;

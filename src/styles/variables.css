@@ -1,30 +1,30 @@
 :root {
   /* ==========================================================================
-     Dark Mode: Monochromatic Minimalism (vev.design)
+     Dark Mode: Warm Charcoal, Cream, Warm Orange Accent
      ========================================================================== */
-  --color-bg: #121212;
-  --color-bg-elevated: #181818;
+  --color-bg: #1d1b19;
+  --color-bg-elevated: #282520;
   --color-surface: transparent;
   --color-surface-hover: rgba(255, 255, 255, 0.035);
   --color-backdrop: rgba(12, 12, 12, 0.78);
 
-  --color-border: rgba(255, 255, 255, 0.075);
-  --color-border-strong: rgba(255, 255, 255, 0.18);
-  --color-border-light: rgba(255, 255, 255, 0.04);
+  --color-border: #403c37;
+  --color-border-strong: #786f64;
+  --color-border-light: #302c27;
 
-  --color-text: #e4e4e4;
-  --color-text-muted: #a0a0a0;
-  --color-text-faint: #6b6b6b;
+  --color-text: #f1ede5;
+  --color-text-muted: #bcb5ac;
+  --color-text-faint: #aaa399;
 
-  --color-accent: #ffffff;
-  --color-accent-subtle: rgba(255, 255, 255, 0.05);
-  --color-accent-active: #ffffff;
+  --color-accent: #d98a4f;
+  --color-accent-subtle: rgba(217, 138, 79, 0.12);
+  --color-accent-active: #edb184;
 
-  --navbar-bg: rgba(18, 18, 18, 0.84);
-  --btn-primary-bg: #e4e4e4;
-  --btn-primary-text: #121212;
-  --selection-bg: rgba(228, 228, 228, 0.18);
-  --selection-text: #ffffff;
+  --navbar-bg: #1d1b19;
+  --btn-primary-bg: var(--color-accent);
+  --btn-primary-text: #1d1b19;
+  --selection-bg: #6f4428;
+  --selection-text: #fffaf3;
 
   /* Typography — Exact Scoped Stacks */
   --font-p-mono: 'GeistMono', 'Geist Mono', ui-monospace, SFMono-Regular, "Roboto Mono", Menlo, Monaco, "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
@@ -34,11 +34,34 @@
   --font-sans: var(--font-p-mono);
   --font-title: 'Alumni Serif', 'Instrument Serif', Georgia, 'Times New Roman', serif;
   --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --page-title-size: clamp(2.5rem, 5vw, 3.75rem);
 
   /* Spatial & Layout Math — Compact & Fitted */
   --container-max: 860px;
   --container-padding: clamp(1.25rem, 4vw, 2.5rem);
+  --section-copy-max: 620px;
   --section-padding: clamp(1rem, 2.5vw, 1.75rem);
+  --section-content-gap: clamp(2.5rem, 7vw, 3.5rem);
+  --page-footer-gap: 4.5rem;
+  --page-footer-padding: 1.25rem;
+  --content-indent: 4ch;
+  --card-grid-offset: 0.85rem;
+  --card-padding: 1.25rem;
+  --card-heading-gap: 1em;
+  --card-title-size: 1.2rem;
+  --card-title-line-height: 1.25;
+  --card-arrow-size: 0.72em;
+  --gallery-thumb-width: 208px;
+  --gallery-thumb-height: 144px;
+  --gallery-gap: 8px;
+  --gallery-hover-scale: 1.04;
+  --social-row-offset: 1.75rem;
+  --social-row-gap-x: 1.1rem;
+  --social-row-gap-y: 0.4rem;
+  --social-link-gap: 0.35rem;
+  --social-link-size: 0.78rem;
+  --social-arrow-shift: 2px;
+  --line-thin: 1px;
   --grid-left-col: 140px;
   --navbar-height: 54px;
 
@@ -50,35 +73,37 @@
 
   /* Motion — Compositor-first (< 200ms routine feedback) */
   --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --duration-fast: 150ms;
   --duration-base: 200ms;
+  --duration-deliberate: 300ms;
 }
 
 [data-theme='light'] {
   /* ==========================================================================
-     Light Mode: Off-White / Beige / Cream Minimalistic Approach
+     Light Mode: Classic Cream, Charcoal, Deep Orange Accent
      ========================================================================== */
-  --color-bg: #fbf9f5;
-  --color-bg-elevated: #f3efe6;
+  --color-bg: #f7f3ea;
+  --color-bg-elevated: #eee7dc;
   --color-surface: transparent;
-  --color-surface-hover: rgba(34, 30, 26, 0.035);
-  --color-backdrop: rgba(34, 30, 26, 0.42);
+  --color-surface-hover: rgba(158, 87, 24, 0.07);
+  --color-backdrop: rgba(0, 0, 0, 0.42);
 
-  --color-border: rgba(34, 30, 26, 0.085);
-  --color-border-strong: rgba(34, 30, 26, 0.2);
-  --color-border-light: rgba(34, 30, 26, 0.045);
+  --color-border: #d9cfc3;
+  --color-border-strong: #91847a;
+  --color-border-light: #ebe3d9;
 
-  --color-text: #221e1a;
-  --color-text-muted: #5f574f;
-  --color-text-faint: #8e847a;
+  --color-text: #332d29;
+  --color-text-muted: #6c625a;
+  --color-text-faint: #71675f;
 
-  --color-accent: #221e1a;
-  --color-accent-subtle: rgba(34, 30, 26, 0.05);
-  --color-accent-active: #000000;
+  --color-accent: #9e5718;
+  --color-accent-subtle: rgba(158, 87, 24, 0.1);
+  --color-accent-active: #7f430e;
 
-  --navbar-bg: rgba(251, 249, 245, 0.86);
-  --btn-primary-bg: #221e1a;
-  --btn-primary-text: #fbf9f5;
-  --selection-bg: rgba(34, 30, 26, 0.14);
-  --selection-text: #221e1a;
+  --navbar-bg: #f7f3ea;
+  --btn-primary-bg: var(--color-accent);
+  --btn-primary-text: #fffaf3;
+  --selection-bg: #edcdb3;
+  --selection-text: #332d29;
 }

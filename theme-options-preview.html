@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>James Catalan — Theme Previews</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: clamp(1rem, 3vw, 3rem); background: #e7e6e1; color: #222; font: 15px Geist, Arial, sans-serif; }
+    h1 { font: 400 clamp(2rem, 5vw, 3.6rem) 'Instrument Serif', Georgia, serif; margin: 0 0 .4rem; }
+    .intro { color: #505050; margin: 0 0 2rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; max-width: 1320px; margin: auto; }
+    .option { min-width: 0; }
+    .option > h2 { font-size: 1.1rem; font-weight: 500; margin: 0 0 .35rem; }
+    .option > p { color: #555; margin: 0 0 1rem; min-height: 2.5rem; }
+    .card { --bg: #fff; --fg: #222; --sub: #555; --accent: #444; --line: #bbb; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 4px; padding: 1.3rem; min-height: 280px; margin-bottom: .8rem; }
+    .nav { border-bottom: 1px solid var(--line); padding-bottom: 1rem; display: flex; flex-wrap: wrap; gap: .8rem; font-size: .83rem; color: var(--sub); }
+    .nav strong { color: var(--accent); border-bottom: 1px solid var(--accent); font-weight: 500; }
+    .card h3 { font: 400 2.6rem 'Instrument Serif', Georgia, serif; margin: 1.3rem 0 .35rem; }
+    .card .lead { font-size: .93rem; margin: 0 0 1rem; }
+    .card a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; font-size: .86rem; }
+    .project { border-top: 1px solid var(--line); margin-top: 1.5rem; padding-top: .8rem; }
+    .project h4 { font: 400 1.5rem 'Instrument Serif', Georgia, serif; margin: 0 0 .3rem; }
+    .project p { margin: 0; color: var(--sub); font-size: .84rem; line-height: 1.5; }
+    .dark-a { --bg:#1d1b19;--fg:#f1ede5;--sub:#bcb5ac;--accent:#e6b65b;--line:#403c37; }
+    .light-a { --bg:#f5f2e9;--fg:#302d29;--sub:#5c5750;--accent:#8c530a;--line:#d5d0c6; }
+    .dark-b { --bg:#14201d;--fg:#ecede3;--sub:#b9c4b7;--accent:#e8b89c;--line:#36463f; }
+    .light-b { --bg:#f3f0e6;--fg:#263b33;--sub:#4c6258;--accent:#925135;--line:#c6d0c5; }
+    .dark-c { --bg:#171b24;--fg:#e8ecf3;--sub:#b3bece;--accent:#a5c9e8;--line:#394350; }
+    .light-c { --bg:#f4f3f0;--fg:#253142;--sub:#536074;--accent:#315c8a;--line:#cbd3d9; }
+    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media (max-width: 580px) { .grid { grid-template-columns: 1fr; } .option > p { min-height: 0; } }
+  </style>
+</head>
+<body>
+  <header><h1>Theme directions for James</h1><p class="intro">Dark at light preview ng bawat option. Color mockups lang; hindi ito ang live portfolio.</p></header>
+  <main class="grid">
+    <section class="option"><h2>A · Charcoal &amp; Cream</h2><p>Warm muted black at cream, may distinct amber accent.</p>
+      <div class="card dark-a"><div class="nav"><strong>About</strong><span>Projects</span><span>Work</span><span>Hobbies</span></div><h3>James Catalan</h3><p class="lead">I build web apps and tools in Manila.</p><a href="#">Email &amp; Résumé ↗</a><div class="project"><h4>ICTrack Inventory System</h4><p>Project summary and details.</p></div></div>
+      <div class="card light-a"><div class="nav"><strong>About</strong><span>Projects</span><span>Work</span><span>Hobbies</span></div><h3>James Catalan</h3><p class="lead">I build web apps and tools in Manila.</p><a href="#">Email &amp; Résumé ↗</a><div class="project"><h4>ICTrack Inventory System</h4><p>Project summary and details.</p></div></div>
+    </section>
+    <section class="option"><h2>B · Forest &amp; Linen</h2><p>Deep forest, linen, at soft peach.</p>
+      <div class="card dark-b"><div class="nav"><strong>About</strong><span>Projects</span><span>Work</span><span>Hobbies</span></div><h3>James Catalan</h3><p class="lead">I build web apps and tools in Manila.</p><a href="#">Email &amp; Résumé ↗</a><div class="project"><h4>ICTrack Inventory System</h4><p>Project summary and details.</p></div></div>
+      <div class="card light-b"><div class="nav"><strong>About</strong><span>Projects</span><span>Work</span><span>Hobbies</span></div><h3>James Catalan</h3><p class="lead">I build web apps and tools in Manila.</p><a href="#">Email &amp; Résumé ↗</a><div class="project"><h4>ICTrack Inventory System</h4><p>Project summary and details.</p></div></div>
+    </section>
+    <section class="option"><h2>C · Ink &amp; Dusty Blue</h2><p>Cool slate, ivory, at muted blue.</p>
+      <div class="card dark-c"><div class="nav"><strong>About</strong><span>Projects</span><span>Work</span><span>Hobbies</span></div><h3>James Catalan</h3><p class="lead">I build web apps and tools in Manila.</p><a href="#">Email &amp; Résumé ↗</a><div class="project"><h4>ICTrack Inventory System</h4><p>Project summary and details.</p></div></div>
+      <div class="card light-c"><div class="nav"><strong>About</strong><span>Projects</span><span>Work</span><span>Hobbies</span></div><h3>James Catalan</h3><p class="lead">I build web apps and tools in Manila.</p><a href="#">Email &amp; Résumé ↗</a><div class="project"><h4>ICTrack Inventory System</h4><p>Project summary and details.</p></div></div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,4 +1,4 @@
-import { Icon } from '@/components/ui'
+import { getEntryNavigation } from '../EntryHeading'
 
 /**
  * Modular Project Item component.
@@ -6,48 +6,30 @@ import { Icon } from '@/components/ui'
  * blending seamlessly into the background within a minimalist grid.
  */
 export function ProjectCard({ project }) {
-  const { index, title, category, year, description, link, githubUrl, liveUrl, linkLabel = 'View project' } = project
-  const href = link || liveUrl || githubUrl || '#'
+  const { title, description, technologies = [] } = project
+  const { href, isExternal, arrow } = getEntryNavigation(project, 'projects')
+  const Card = href ? 'a' : 'article'
 
   return (
-    <article className="project-grid-cell">
-      <div className="project-cell-top">
-        {(index || year || category) && (
-          <div className="project-cell-meta tabular">
-            {index && <span>{index}</span>}
-            {index && (year || category) && <span className="project-meta-sep" aria-hidden="true">·</span>}
-            {year && <span>{year}</span>}
-            {year && category && <span className="project-meta-sep" aria-hidden="true">·</span>}
-            {category && <span>{category}</span>}
-          </div>
-        )}
-
-        <h2 className="project-cell-title">
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-title-anchor"
-          >
-            {title}
-          </a>
-        </h2>
-
-        <div className="project-cell-description">{description}</div>
+    <Card
+      className={`entry-card project-grid-cell ${href ? 'is-linked' : ''}`.trim()}
+      {...(href ? { href } : {})}
+      {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+    >
+      <div className="entry-card-heading project-title-row">
+        <h2 className="project-cell-title">{title}</h2>
+        {arrow && <span className="entry-card-arrow project-card-arrow" aria-hidden="true">{arrow}</span>}
       </div>
 
-      <div className="project-cell-footer">
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="project-cell-link"
-          aria-label={`${linkLabel}: ${title}`}
-        >
-          <span>{linkLabel}</span>
-          <Icon name="arrow-up-right" size={13} />
-        </a>
-      </div>
-    </article>
+      <p className="project-cell-description">{description}</p>
+
+      {technologies.length > 0 && (
+        <ul className="project-technologies" aria-label={`${title} technologies`}>
+          {technologies.map((technology) => (
+            <li key={technology}>{technology}</li>
+          ))}
+        </ul>
+      )}
+    </Card>
   )
 }

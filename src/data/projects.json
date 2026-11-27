@@ -1,42 +1,47 @@
 [
   {
-    "id": "vanguard",
-    "index": "01",
-    "title": "Vanguard",
-    "category": "Cloud Security",
-    "year": "2025",
-    "description": "Multi-tenant cloud infrastructure compliance monitor that continuously evaluates resource configurations against security baselines in real time.",
-    "link": "https://github.com/jeymzaintsnitch",
-    "linkLabel": "View project"
+    "id": "ictrack",
+    "detailPage": true,
+    "title": "ICTrack Inventory System",
+    "description": "An inventory system used at DOST-MIMAROPA.",
+    "technologies": ["Laravel", "MySQL"],
+    "contribution": "Improved the existing system during my internship at DOST-MIMAROPA.",
+    "year": "",
+    "body": [],
+    "images": [],
+    "link": null
   },
   {
-    "id": "pup-assess",
-    "index": "02",
-    "title": "PUP Assessment Portal",
-    "category": "Web Application",
-    "year": "2024",
-    "description": "Collegiate examination and automated rubric grading platform featuring randomized question pools, session recovery, and cohort analytics.",
-    "link": "https://github.com/jeymzaintsnitch",
-    "linkLabel": "View project"
+    "id": "parking-deterrence-system",
+    "detailPage": false,
+    "title": "Parking Deterrence System",
+    "description": "An AI-assisted system that detects vehicles in restricted zones and records parking incidents in a staff dashboard.",
+    "technologies": ["Python", "YOLOv8", "Laravel", "MySQL"],
+    "year": "",
+    "body": [],
+    "images": [],
+    "link": null
   },
   {
-    "id": "pulseroute",
-    "index": "03",
-    "title": "PulseRoute",
-    "category": "Systems & Networking",
-    "year": "2024",
-    "description": "Lightweight HTTP reverse proxy engineered for sub-millisecond routing, sliding-window rate limiting, and automatic upstream health checks.",
-    "link": "https://github.com/jeymzaintsnitch",
-    "linkLabel": "View project"
+    "id": "mesatrack",
+    "detailPage": false,
+    "title": "MesaTrack",
+    "description": "A go-to mobile app connecting PUP-Taguig students with small businesses around the campus.",
+    "technologies": ["Kotlin", "Flutter"],
+    "year": "",
+    "body": [],
+    "images": [],
+    "link": null
   },
   {
-    "id": "hyperion",
-    "index": "04",
-    "title": "Hyperion Cache",
-    "category": "Systems & Networking",
-    "year": "2024",
-    "description": "Zero-dependency in-memory key-value store built over raw TCP sockets with O(1) hash table indexing and Doubly-Linked LRU eviction.",
-    "link": "https://github.com/jeymzaintsnitch",
-    "linkLabel": "View project"
+    "id": "video-store-system",
+    "detailPage": false,
+    "title": "Video Store System",
+    "description": "A video rental store system for managing movies, physical tape inventory, rentals, returns, and reports.",
+    "technologies": ["Laravel", "MySQL"],
+    "year": "",
+    "body": [],
+    "images": [],
+    "link": null
   }
 ]

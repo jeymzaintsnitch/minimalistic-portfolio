@@ -1,57 +1,43 @@
 import { hobbies } from '@/data/portfolio'
+import { getEntryNavigation } from '../EntryHeading'
 import './Hobbies.css'
 
-export function Hobbies({ onNavigate }) {
+function HobbyCard({ hobby }) {
+  const { href, isExternal, arrow } = getEntryNavigation(hobby, 'hobbies')
+  const Card = href ? 'a' : 'article'
+
+  return (
+    <Card
+      className={`entry-card editorial-row hobby-row ${href ? 'is-linked' : ''}`.trim()}
+      {...(href ? { href } : {})}
+      {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+    >
+      <div className="hobby-content">
+        <div className="entry-card-heading hobby-title-row">
+          <h2 className="hobby-title">{hobby.title}</h2>
+          {arrow && <span className="entry-card-arrow hobby-card-arrow" aria-hidden="true">{arrow}</span>}
+        </div>
+        <p className="hobby-desc">{hobby.description}</p>
+      </div>
+    </Card>
+  )
+}
+
+export function Hobbies() {
   return (
     <section id="hobbies" className="section-hobbies">
       <div className="section-head">
         <div className="section-head-copy">
           <h1 className="section-heading">hobbies</h1>
           <p className="section-subtext">
-            analogue rituals, hardware tinkering, and offline pursuits outside of engineering.
+            keyboards, music, writing, and time away from code.
           </p>
         </div>
-        <span className="minimal-kbd tabular">01 — 0{hobbies.length}</span>
       </div>
 
-      <div className="editorial-list">
-        {hobbies.map((hobby) => (
-          <article key={hobby.id} className="editorial-row hobby-row">
-            <div className="editorial-meta">
-              <span className="editorial-index tabular">{hobby.index}</span>
-              <span className="editorial-submeta">{hobby.category}</span>
-            </div>
-
-            <div className="editorial-body">
-              <h2 className="hobby-title">{hobby.title}</h2>
-              <div className="hobby-desc">{hobby.description}</div>
-              {hobby.note && (
-                <div className="hobby-note">{hobby.note}</div>
-              )}
-            </div>
-          </article>
-        ))}
+      <div className="entry-card-grid editorial-list hobbies-primary-grid">
+        {hobbies.map((hobby) => <HobbyCard key={hobby.id} hobby={hobby} />)}
       </div>
-
-      {onNavigate && (
-        <div className="page-nav-footer">
-          <button
-            type="button"
-            className="page-nav-link"
-            onClick={() => onNavigate('work')}
-          >
-            <span>← Work</span>
-          </button>
-          <span className="minimal-kbd">03 / 04</span>
-          <button
-            type="button"
-            className="page-nav-link"
-            onClick={() => onNavigate('projects')}
-          >
-            <span>Projects →</span>
-          </button>
-        </div>
-      )}
     </section>
   )
 }

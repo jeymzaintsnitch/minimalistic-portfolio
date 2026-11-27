@@ -1,12 +1,19 @@
 import { useState, useEffect, useCallback } from 'react'
-import { Navbar } from '@/components/layout'
+import { Footer, Navbar } from '@/components/layout'
 import { About, Work, Projects, Hobbies } from '@/components/sections'
+import { ContentDetail } from '@/components/sections/ContentDetail'
 
 const VALID_PAGES = ['about', 'work', 'hobbies', 'projects']
 
-function getPageFromHash() {
+function getRouteFromHash() {
   const hash = window.location.hash.replace(/^#\/?/, '').toLowerCase().trim()
-  return VALID_PAGES.includes(hash) ? hash : 'about'
+  const [page, slug] = hash.split('/')
+
+  if (['now', 'projects', 'work', 'hobbies'].includes(page) && slug) {
+    return { page, slug }
+  }
+
+  return { page: VALID_PAGES.includes(page) ? page : 'about', slug: null }
 }
 
 function getInitialTheme() {
@@ -23,11 +30,16 @@ function getInitialTheme() {
 }
 
 function App() {
-  const [activePage, setActivePage] = useState(getPageFromHash)
+  const [route, setRoute] = useState(getRouteFromHash)
   const [theme, setTheme] = useState(getInitialTheme)
 
   useEffect(() => {
+    if (!route.slug) document.title = `${route.page === 'about' ? 'About' : route.page.charAt(0).toUpperCase() + route.page.slice(1)} | James Catalan`
+  }, [route.page, route.slug])
+
+  useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', getComputedStyle(document.documentElement).getPropertyValue('--color-bg').trim())
     try {
       localStorage.setItem('theme', theme)
     } catch {
@@ -42,15 +54,14 @@ function App() {
   const navigateTo = useCallback((pageId) => {
     if (VALID_PAGES.includes(pageId)) {
       window.location.hash = pageId === 'about' ? '#/' : `#/${pageId}`
-      setActivePage(pageId)
+      setRoute({ page: pageId, slug: null })
       window.scrollTo({ top: 0, behavior: 'instant' })
     }
   }, [])
 
   useEffect(() => {
     const onHashChange = () => {
-      const page = getPageFromHash()
-      setActivePage(page)
+      setRoute(getRouteFromHash())
       window.scrollTo({ top: 0, behavior: 'instant' })
     }
 
@@ -79,24 +90,23 @@ function App() {
   return (
     <div className="portfolio-app">
       <Navbar
-        activePage={activePage}
+        activePage={route.page === 'now' ? 'about' : route.page}
         onNavigate={navigateTo}
         theme={theme}
         onToggleTheme={toggleTheme}
       />
 
       <main className="container portfolio-main-container" id="main-content">
-        <div key={activePage} className="page-view-enter">
-          {activePage === 'about' && <About onNavigate={navigateTo} theme={theme} />}
-          {activePage === 'work' && <Work onNavigate={navigateTo} />}
-          {activePage === 'hobbies' && <Hobbies onNavigate={navigateTo} />}
-          {activePage === 'projects' && <Projects onNavigate={navigateTo} />}
+        <div key={`${route.page}-${route.slug || ''}`} className="page-view-enter">
+          {route.page === 'about' && <About theme={theme} />}
+          {route.slug && <ContentDetail section={route.page} slug={route.slug} />}
+          {!route.slug && route.page === 'work' && <Work />}
+          {!route.slug && route.page === 'hobbies' && <Hobbies />}
+          {!route.slug && route.page === 'projects' && <Projects />}
         </div>
-      </main>
 
-      <footer className="minimal-footer">
-        <span>© 2026 James Rolmer V. Catalan</span>
-      </footer>
+        <Footer page={route.page} isDetail={Boolean(route.slug)} />
+      </main>
     </div>
   )
 }

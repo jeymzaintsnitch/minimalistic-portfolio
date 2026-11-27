@@ -21,6 +21,7 @@ export function Navbar({ activePage = 'about', onNavigate, theme = 'dark', onTog
               <button
                 key={link.id}
                 type="button"
+                aria-current={isActive ? 'page' : undefined}
                 className={`navbar-link-item ${isActive ? 'is-active' : ''}`}
                 onClick={(e) => handleNavClick(e, link.id)}
               >

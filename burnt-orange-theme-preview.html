@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Burnt Orange Theme Preview</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: clamp(1rem, 4vw, 3rem); background: #ddd8cf; color: #292622; font-family: Arial, sans-serif; }
+    h1, h2, h3, nav { font-family: Georgia, serif; font-weight: 400; }
+    header { max-width: 1080px; margin: 0 auto 1.5rem; }
+    header h1 { margin: 0 0 .35rem; font-size: clamp(2rem, 5vw, 3.5rem); }
+    header p { margin: 0; color: #625d56; }
+    .grid { max-width: 1080px; margin: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .preview { --bg: #1d1b19; --fg: #f1ede5; --muted: #bcb5ac; --accent: #d26e41; --active: #ef9167; --line: #443a34; min-height: 560px; padding: clamp(1.25rem, 3vw, 2rem); color: var(--fg); background: var(--bg); border: 1px solid var(--line); }
+    .preview.light { --bg: #f7f3ea; --fg: #332d29; --muted: #6c625a; --accent: #a94725; --active: #86361d; --line: #d9cfc3; }
+    .mode { margin: 0 0 1rem; color: var(--muted); font: 11px monospace; text-transform: uppercase; letter-spacing: .08em; }
+    nav { display: flex; gap: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); font-size: 1.2rem; color: var(--muted); }
+    nav .active { position: relative; color: var(--fg); }
+    nav .active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -.35rem; height: 2px; background: var(--accent); }
+    .hero { padding: 2.75rem 0 2rem; }
+    .hero h2 { margin: 0 0 .6rem; font-size: clamp(2.7rem, 6vw, 4.2rem); line-height: .95; }
+    .hero p { max-width: 42ch; margin: 0 0 1rem; color: var(--muted); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid currentColor; }
+    a:hover { color: var(--active); }
+    .now { padding-top: 1.4rem; border-top: 1px solid var(--line); }
+    .now h3 { margin: 0 0 1rem; font-size: 1.8rem; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .card { min-width: 0; padding: .8rem 0; }
+    .card strong { display: block; margin-bottom: .35rem; font: 400 1.25rem Georgia, serif; }
+    .card p { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.5; }
+    .swatches { display: flex; gap: .5rem; margin-top: 1.5rem; }
+    .swatch { width: 28px; height: 28px; border: 1px solid var(--line); }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Burnt orange · cream</h1>
+    <p>Preview only. Accent: #D26E41. Light background: #F7F3EA.</p>
+  </header>
+  <main class="grid">
+    <section class="preview">
+      <p class="mode">Dark mode</p>
+      <nav><span class="active">James</span><span>Work</span><span>Hobbies</span><span>Projects</span></nav>
+      <div class="hero"><h2>James Catalan</h2><p>I build simple web apps and reliable systems. Based in Manila.</p><a href="#">Email &amp; résumé ↗</a></div>
+      <div class="now"><h3>Now</h3><div class="cards"><div class="card"><strong><a href="#">Finished Internship</a></strong><p>Improved the ICTrack Inventory System.</p></div><div class="card"><strong><a href="#">Pursuing a Diploma</a></strong><p>Learning through coursework and projects.</p></div></div></div>
+      <div class="swatches"><span class="swatch" style="background:#1d1b19"></span><span class="swatch" style="background:#f1ede5"></span><span class="swatch" style="background:#d26e41"></span></div>
+    </section>
+    <section class="preview light">
+      <p class="mode">Light mode</p>
+      <nav><span class="active">James</span><span>Work</span><span>Hobbies</span><span>Projects</span></nav>
+      <div class="hero"><h2>James Catalan</h2><p>I build simple web apps and reliable systems. Based in Manila.</p><a href="#">Email &amp; résumé ↗</a></div>
+      <div class="now"><h3>Now</h3><div class="cards"><div class="card"><strong><a href="#">Finished Internship</a></strong><p>Improved the ICTrack Inventory System.</p></div><div class="card"><strong><a href="#">Pursuing a Diploma</a></strong><p>Learning through coursework and projects.</p></div></div></div>
+      <div class="swatches"><span class="swatch" style="background:#f7f3ea"></span><span class="swatch" style="background:#332d29"></span><span class="swatch" style="background:#d26e41"></span></div>
+    </section>
+  </main>
+</body>
+</html>

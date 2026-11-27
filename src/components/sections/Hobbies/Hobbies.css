@@ -3,14 +3,38 @@
   padding-bottom: 0.5rem;
 }
 
+.section-hobbies .editorial-list {
+  padding-top: 0;
+}
+
+.hobbies-primary-grid {
+  grid-auto-rows: 1fr;
+}
+
+.section-hobbies .hobby-row,
+.section-hobbies .hobby-row:last-child {
+  display: block;
+  grid-template-columns: none;
+  padding: 0;
+  gap: 0;
+}
+
+.hobby-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: var(--card-padding);
+}
+
 .hobby-title {
-  font-family: var(--font-title);
-  font-size: 1.7rem;
+  font-family: var(--font-serif);
+  font-size: var(--card-title-size);
   font-weight: 400;
   color: var(--color-text);
   margin: 0;
   letter-spacing: -0.015em;
-  line-height: 1.15;
+  line-height: var(--card-title-line-height);
 }
 
 .hobby-desc {

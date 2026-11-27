@@ -82,7 +82,7 @@ export function AsciiPortrait({
       const cellH = clientHeight / offscreen.height
 
       // Background fill matching current theme
-      ctx.fillStyle = isLight ? '#fbf9f5' : '#121212'
+      ctx.fillStyle = getComputedStyle(canvas).getPropertyValue('--color-bg').trim()
       ctx.fillRect(0, 0, clientWidth, clientHeight)
       ctx.textAlign = 'center'
       ctx.textBaseline = 'middle'
@@ -105,23 +105,23 @@ export function AsciiPortrait({
           const contrast = Math.pow(sharpened, 0.75)
 
           if (isLight) {
-            // Light mode: warm espresso characters on cream background
+            // Light mode: charcoal characters on a warm paper background
             const charIdx = Math.floor((1 - contrast) * (rampLen - 1))
             const char = ASCII_CHAR_RAMP[charIdx]
             if (char === ' ') continue
 
-            const r = Math.round(34 + (1 - contrast) * 115)
-            const g = Math.round(30 + (1 - contrast) * 110)
-            const b = Math.round(26 + (1 - contrast) * 105)
+            const r = Math.round(40 + (1 - contrast) * 104)
+            const g = Math.round(42 + (1 - contrast) * 100)
+            const b = Math.round(42 + (1 - contrast) * 96)
             ctx.fillStyle = `rgb(${r}, ${g}, ${b})`
             ctx.fillText(char, (x + 0.5) * cellW, (y + 0.5) * cellH)
           } else {
-            // Dark mode: Monochromatic crisp characters on #121212
+            // Dark mode: warm monochrome characters on charcoal
             const char = ASCII_CHAR_RAMP[Math.floor(contrast * (rampLen - 1))]
             if (char === ' ') continue
 
-            const brightness = Math.round(55 + contrast * 175)
-            ctx.fillStyle = `rgb(${brightness}, ${brightness}, ${brightness})`
+            const brightness = Math.round(70 + contrast * 165)
+            ctx.fillStyle = `rgb(${brightness}, ${Math.round(brightness * 0.97)}, ${Math.round(brightness * 0.93)})`
             ctx.fillText(char, (x + 0.5) * cellW, (y + 0.5) * cellH)
           }
         }
